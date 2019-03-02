@@ -11,9 +11,10 @@ public class ApplicationServiceTest {
     private ApplicationService service;
     private String EXPECTED_MESSAGE = "Welcome to Biblioteca";
     private String EXPECTED_MENU = "------- Main Menu -------" + NEWLINE +
-            "1. Loan a book" + NEWLINE +
-            "2. Return a book" + NEWLINE +
-            "3. Exit";
+            "1. View List of Test Books with author and publication year" + NEWLINE +
+            "2. Checkout a Test book" + NEWLINE +
+            "3. Return a Test book" + NEWLINE +
+            "4. Exit Test Biblioteca Application";
 
     @Before
     public void setUp() {
@@ -30,5 +31,10 @@ public class ApplicationServiceTest {
     public void shouldDisplayMainMenu() {
         String menu = service.getMainMenu();
         assertEquals(EXPECTED_MENU, menu);
+    }
+
+    @Test
+    public void shouldBeNotifiedWhenUserChosenAnOption() {
+
     }
 }
