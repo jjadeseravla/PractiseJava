@@ -13,12 +13,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="junit-4.11" level="project" />
-    <orderEntry type="library" name="Maven: org.mockito:mockito-core:2.24.5" level="project" />
-    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.9.7" level="project" />
-    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.9.7" level="project" />
-    <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.6" level="project" />
-    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-android:1.9.7" level="project" />
-    <orderEntry type="library" name="Maven: com.jakewharton.android.repackaged:dalvik-dx:1" level="project" />
-    <orderEntry type="library" name="Maven: com.jakewharton.android.repackaged:libcore-dex:2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:2.7.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy:1.6.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy-agent:1.6.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:2.5" level="project" />
   </component>
 </module>
