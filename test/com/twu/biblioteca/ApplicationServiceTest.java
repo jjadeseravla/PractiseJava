@@ -16,12 +16,14 @@ public class ApplicationServiceTest {
 
     final String NEWLINE = System.getProperty("line.separator");
     private ApplicationService service;
-    private String EXPECTED_MESSAGE = "Welcome to Biblioteca";
+    private String EXPECTED_MESSAGE = "Welcome to Biblioteca.";
     private String EXPECTED_MENU = "------- Main Menu -------" + NEWLINE +
             "1. View List of Test Books with author and publication year" + NEWLINE +
             "2. Checkout a Test book" + NEWLINE +
             "3. Return a Test book" + NEWLINE +
             "4. Exit Test Biblioteca Application";
+    private Book[] books = new Book[1];
+    private BookManager bookManager;
 
     //@Mock
     //Scanner mockSc;
@@ -30,7 +32,11 @@ public class ApplicationServiceTest {
     @Before
     public void setUp() {
         factory = Mockito.mock(ScannerFactory.class);
-        service = new ApplicationService(factory.getInstance());
+        bookManager = Mockito.mock(BookManager.class);
+        service = new ApplicationService(factory.getInstance(), bookManager);
+        Book book = Mockito.mock(Book.class);
+        when(book.getTitle()).thenReturn("yala");
+        books[0] = book;
     }
 
     @Test
@@ -69,10 +75,17 @@ public class ApplicationServiceTest {
     }
 
 
-
     @Test
     public void shouldDisplayBooks() {
+        when(bookManager.getBooks()).thenReturn(books);
+        service.displayBook();
+        verify(bookManager, times(1)).getBooks();
+        for (int i = 0; i < books.length; i ++) {
 
+            verify(books[i], times(1)).getTitle();
+            verify(books[i], times(1)).getAuthor();
+            verify(books[i], times(1)).getYearPublished();
+        }
     }
 }
 
